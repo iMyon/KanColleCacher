@@ -17,6 +17,15 @@ namespace d_f_32.KanColleCacher
         private static string filePath;
 
         public static Settings Current { get; private set; }
+        public static string getCacheFolder()
+        {
+            //检查相对路径和绝对路径
+            if (!Path.IsPathRooted(Current.CacheFolder))
+            {
+                return  AppDomain.CurrentDomain.BaseDirectory + Current.CacheFolder;
+            }
+            return Current.CacheFolder;
+        }
 
         /// <summary>
         /// 加载插件设置
@@ -43,9 +52,10 @@ goto Failed;
 
 
 SetPath1:
-			filePath = Directory.GetCurrentDirectory() + @"\Plugins\KanColleCacher.xml";
+//filePath = Directory.GetCurrentDirectory() + @"\Plugins\KanColleCacher.xml";
+filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "setting", "KanColleCacher.xml");
 
-switch_on = 1;
+switch_on = 2;
 goto ReadFile;
 
 
@@ -82,18 +92,19 @@ return;
 
 
 Succeed:
-			if (!Directory.Exists(Current.CacheFolder))
+			if (!Directory.Exists(getCacheFolder()))
 			{
 				try
 				{
-					Directory.CreateDirectory(Current.CacheFolder);
+					Directory.CreateDirectory(getCacheFolder());
 				}
 				catch (Exception ex)
 				{
-					Current.CacheFolder = Directory.GetCurrentDirectory() + @"\MyCache";
+					Current.CacheFolder = @"Cache";
 					Log.Exception(ex.InnerException, ex, "设置文件中CacheFolder不存在，试图创建时发生异常");
 				}
 			}
+
 return;
         }
         
@@ -115,7 +126,7 @@ return;
         
         public Settings ()
         {       
-                _CacheFolder = Directory.GetCurrentDirectory() + @"\MyCache";
+                _CacheFolder = @"Cache";
                 _CacheEnabled = true;
                 _HackEnabled = true;
                 _HackTitleEnabled = true;

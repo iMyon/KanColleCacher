@@ -52,7 +52,7 @@ namespace d_f_32.KanColleCacher
 		{
 			set = Settings.Current;
 			VersionChecker.Load();
-			myCacheFolder = set.CacheFolder;
+			myCacheFolder = Settings.getCacheFolder();
 		}
 
 		~CacheCore()

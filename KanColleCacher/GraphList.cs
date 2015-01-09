@@ -18,7 +18,7 @@ namespace d_f_32.KanColleCacher
 
 		static void PrintToFile()
 		{
-			string filepath = Settings.Current.CacheFolder + "\\GraphList.txt";
+			string filepath = Settings.getCacheFolder() + "\\GraphList.txt";
 			StringBuilder content = new StringBuilder();
 
 			content.AppendFormat(

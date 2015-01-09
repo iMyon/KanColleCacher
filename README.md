@@ -5,6 +5,8 @@
 简介
 -----------------------
 
+**这里是KanColleCacher的一个自用版，修改支持相对路径，便携目的。**
+
 KanColleCacher.dll为网页游戏「舰队Collection」的工具程序「提督很忙！」（KanColleViewer，即KCV）的扩展插件。
 
 KanColleCacher提供了在IE缓存外额外保存文件的功能（本地缓存）。
@@ -67,6 +69,10 @@ KanColleCacher会在客户端向服务器请求文件之前，检查插件保存
 * 或者在启动KanColleViewer前
     * 在文件`%AppData%\grabacr.net\KanColleViewer\KanColleCacher.xml`中
 	* 设置`<CacheFolder>`节点为缓存文件夹的绝对地址。
+* 相对路径设置方法
+  * 填写相对路径会自动转到`<KCV文件夹>\<相对路径文件夹名>`
+  * 初始化时默认为`<KCV文件夹>\Cache`
+  * 设置文件保存在`<KCV文件夹>\setting\KanColleCacher.xml`中
 
 > **注意：**
 > 

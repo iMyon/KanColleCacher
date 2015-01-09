@@ -31,7 +31,7 @@ namespace d_f_32.KanColleCacher
 		/// </summary>
 		static public void Load()
 		{
-			filepath = Settings.Current.CacheFolder + "\\Last-Modified.xml";
+			filepath = Settings.getCacheFolder() + "\\Last-Modified.xml";
 			try
 			{
 				if (File.Exists(filepath))
