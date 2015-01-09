@@ -5,7 +5,8 @@
 简介
 -----------------------
 
-**这里是KanColleCacher的一个自用版，修改支持相对路径，便携目的。**
+**这里是KanColleCacher的一个自用版，修改支持相对路径，便携目的。**  
+[文件下载](https://github.com/iMyon/KanColleCacher/releases/tag/1.3.1)
 
 KanColleCacher.dll为网页游戏「舰队Collection」的工具程序「提督很忙！」（KanColleViewer，即KCV）的扩展插件。
 
